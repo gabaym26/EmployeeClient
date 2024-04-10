@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import {Route, Routes} from 'react-router-dom'
+import Header from './components/header/Header';
+import WorkersList from './components/workers/workersList'
+import Body from './components/body/body';
+import { createContext, useState } from 'react';
+
+export const IsOpenned = createContext(null);
 
 function App() {
+  const [isOpened, setIsOpened] = useState(false);
+  const openned = { isOpened, setIsOpened };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <IsOpenned.Provider value={openned}>
+   <Header></Header>
+   {/* <WorkersList></WorkersList> */}
+    <Body></Body>
+    </IsOpenned.Provider>
     </div>
   );
 }
 
 export default App;
+
