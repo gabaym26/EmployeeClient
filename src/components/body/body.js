@@ -5,6 +5,7 @@ import DialogAdding from "../workers/dialogAdding"
 import AddRole from '../roles/AddRole'
 const Body = () => {
     return <Routes>
+         <Route path="/" element={<HomePage />} />
         <Route path="/Add Employee" element={<DialogAdding />} />
         <Route path="/Home Page" element={<HomePage />} />
         <Route path="/Edit Employee" element={<DialogAdding />} />
