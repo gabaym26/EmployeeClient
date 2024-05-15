@@ -51,7 +51,6 @@ const AddRole = () => {
     }
 
     const handleDelete = (id) => {
-        
         dispatch(deleteRole(id));
         dispatch(getRoles());
     }

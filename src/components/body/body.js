@@ -6,7 +6,6 @@ import AddRole from '../roles/AddRole'
 const Body = () => {
     return <Routes>
         <Route path="/Add Employee" element={<DialogAdding />} />
-        <Route path="/" element={<HomePage />} />
         <Route path="/Home Page" element={<HomePage />} />
         <Route path="/Edit Employee" element={<DialogAdding />} />
         <Route path="/All Employees" element={<WorkersList />} />

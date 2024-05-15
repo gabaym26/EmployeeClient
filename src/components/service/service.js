@@ -138,7 +138,7 @@ const deleteRole = (role) => {
       console.error(error);
       Swal.fire({
         title: 'Error!',
-        text: 'There are workers that use this role,you cant delete it',
+        text: 'An error occurred while deleting role.',
         icon: 'error'
       });
     }
