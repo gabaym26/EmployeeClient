@@ -25,7 +25,7 @@ const Reducer_Roloe = (state = initialState, action) => {
         case actionsName.DELETE_ROLR:
             {
                 const roles = [...state.roles];
-                roles.filter(role => role.id != action.paylaod)
+                roles.filter(role => role.id !== action.paylaod)
                 return {
                     ...state,
                     roles: roles

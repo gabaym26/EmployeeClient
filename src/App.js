@@ -1,8 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import {Route, Routes} from 'react-router-dom'
 import Header from './components/header/Header';
-import WorkersList from './components/workers/workersList'
 import Body from './components/body/body';
 import { createContext, useState } from 'react';
 

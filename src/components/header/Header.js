@@ -4,8 +4,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import SchoolIcon from '@mui/icons-material/School';
-const pages = ['All Workers', 'Add Worker', 'Home Page'];
-const settings = ['Logout'];
+
 
 function Header() {
   const preventDefault = (event) => event.preventDefault();

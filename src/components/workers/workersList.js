@@ -17,7 +17,6 @@ var XLSX = require("xlsx");
 
 export default function DataTable() {
   const dispatch = useDispatch();
-  const [update, setUpdate] = useState(false);
   const [employee, setEmployee] = useState([]);
   const isOpened = useContext(IsOpenned).isOpened;
   const setIsOpened = useContext(IsOpenned).setIsOpened;

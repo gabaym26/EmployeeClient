@@ -17,7 +17,7 @@ import dayjs from 'dayjs';
 import TextField from '@mui/material/TextField';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getEmployees, getRoles } from '../service/service.js';
+import { getEmployees } from '../service/service.js';
 
 const schema = yup.object({
     FirstName: yup.string().required(),
@@ -30,7 +30,7 @@ const schema = yup.object({
 export default function AddWorker(data) {
     const roles = useSelector(s => s.role.roles)
     const dispatch = useDispatch();
-    const [open, setOpen] = React.useState(false);
+    const [setOpen] = React.useState(false);
     const [rolesEmployee, setRolesEmployee] = useState([{ RoleId: '', IsAdministrative: false, StartDate: '' }]); const [errorMessageEarlyDate, setErrorMessageEarlyDate] = React.useState('');
     const [errorMessageEndRoles, setErrorMessageEndRoles] = React.useState('');
     const setIsOpened = useContext(IsOpenned).setIsOpened;
@@ -74,7 +74,7 @@ export default function AddWorker(data) {
     };
     const { register, control, handleSubmit, formState } = useForm({ resolver: yupResolver(schema) });
     const { errors } = formState;
-    const { fields: Rolesfields, append: appendRole, remove: removeRole
+    const { 
     } = useFieldArray({ control, name: "Role" });
 
     const handleEdit = (employeeId, employee) => {
@@ -113,7 +113,7 @@ export default function AddWorker(data) {
         ); setAvailableRoles(available)
         setRolesEmployee([...rolesEmployee, { RoleId: 0, IsAdministrative: '', StartDate: '' }]);
 
-        if (availableRoles.length == 0) {
+        if (availableRoles.length === 0) {
             setErrorMessageEndRoles('You cant check twice the same role, delete it!');
         }
         else {
@@ -128,7 +128,7 @@ export default function AddWorker(data) {
         }
         const updatedRoles = rolesEmployee.filter((role, i) => i !== index);
         setRolesEmployee(updatedRoles);
-        if (roles.length + 1 == rolesEmployee.length) {
+        if (roles.length + 1 === rolesEmployee.length) {
             setErrorMessageEndRoles('');
         }
     };
@@ -232,11 +232,11 @@ export default function AddWorker(data) {
                                 }
                             }}
                             required
-                        />{errorMessageEarlyDate && errorMessageEarlyDate != '' && <div style={{ color: 'red' }}>{errorMessageEarlyDate}</div>}
+                        />{errorMessageEarlyDate && errorMessageEarlyDate !== '' && <div style={{ color: 'red' }}>{errorMessageEarlyDate}</div>}
                         <Button variant="contained" onClick={() => handleDeleteRole(index)}>Delete Role</Button>
                     </div>
                 ))}
-                {errorMessageEndRoles && errorMessageEndRoles != '' && <div style={{ color: 'red' }}>{errorMessageEndRoles}</div>}
+                {errorMessageEndRoles && errorMessageEndRoles !== '' && <div style={{ color: 'red' }}>{errorMessageEndRoles}</div>}
                 <Button variant="contained" onClick={handleAddRole}>Add Role</Button>
             </div>
         </DialogContent>

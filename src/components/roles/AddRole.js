@@ -45,7 +45,7 @@ const AddRole = () => {
         };
         fetchRoles();
 
-    }, [roles,]);
+    }, [roles]);
     const onSubmit = (data) => {
         dispatch(addRole(data));
     }
